@@ -1,0 +1,21 @@
+<!-- views/pages/partials/header.ejs -->
+
+<header>
+	<nav>
+		<a href="/" class="<%= (locals.page && locals.page == 'accueil') ? 'active' : '' %>"><span class="fa-duotone fa-house" aria-hidden="true"></span> Accueil</a>
+		<a href="/lorem" class="<%= (locals.page && locals.page == 'lorem') ? 'active' : '' %>"><span class="fa-duotone fa-stars" aria-hidden="true"></span> Lorem</a>
+		<a href="/randomusername">Nom au hasard</a>
+		<a href="/pseudo/">Choix pseudo</a>
+	</nav>
+
+	<% if(locals.flash) { %>
+		<div class="messages">
+			<% for(m of locals.flash) { %>
+				<p class="message <%= m[0] %>">
+					<%= m[1] %>
+				</p>
+			<% } %>
+		</div>
+	<% } %>
+
+</header>
